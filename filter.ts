@@ -50,7 +50,7 @@ function filterCourseList(searchedRange: Tuple): CourseList {
     if (
       (!minSearchPrice && maxSearchPrice > minCoursePrice) ||
       (!maxSearchPrice && minSearchPrice < maxCoursePrice) ||
-      (maxSearchPrice > minCoursePrice)
+      (maxSearchPrice > minCoursePrice && minSearchPrice < maxCoursePrice)
     )
       requiredCourses.push(countNewPriceRange(searchedRange, course))
   }
